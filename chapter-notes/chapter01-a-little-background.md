@@ -1,148 +1,237 @@
 # Chapter 1 — A Little Background
 
-## Overview
+## Chapter Objective
 
-This chapter introduces the history and logic behind database systems before getting into SQL syntax. The main goal is to explain how databases evolved from manual and early computerized storage systems into relational databases, and why SQL became the standard language for working with data.
-
-For me, this chapter is useful because it builds the conceptual foundation for learning SQL in a more durable way. Instead of treating SQL as just a set of commands, it frames SQL as part of a larger system for storing, organizing, and retrieving information.
+Understand how databases evolved, why relational databases became dominant, and how SQL emerged as the standard language for working with data.
 
 ---
 
-## Key Takeaways
+## Key Concepts
 
-### 1. A database is a structured collection of related information
-The chapter begins with simple examples like a telephone book to show that a database is just related data organized for lookup and use. Manual systems work, but they are slow, limited, and become outdated quickly.
+### Database
 
-### 2. Computerized databases solved major problems of paper systems
-Early digital database systems improved speed, indexing, and freshness of information. Even though the earliest systems were primitive by modern standards, they were a major step forward from paper-based storage.
+A database is a collection of related information.
 
-### 3. Pre-relational systems were harder to navigate
-The chapter describes two older database models:
+Examples:
 
-- **Hierarchical databases** organize data like a tree
-- **Network databases** allow more complex linked relationships
+- telephone directory
+- customer records
+- bank accounts
+- stock market data
+- financial statements
 
-These models worked, but they required users and systems to navigate data through fixed paths and record links. That made them less flexible than relational systems.
+Computerized databases improve:
 
-### 4. The relational model changed how data was organized
-The relational model, introduced by E. F. Codd, represented data as tables. Instead of following pointers between records, relationships could be handled through shared values across tables.
-
-This made databases:
-- easier to understand
-- easier to design
-- easier to query
-- more scalable for many use cases
-
-### 5. Keys are central to relational design
-The chapter introduces the ideas of:
-
-- **Primary keys**: unique identifiers for each row
-- **Foreign keys**: columns used to connect one table to another
-- **Natural keys vs surrogate keys**: design choices for identifying records
-
-This was one of the most important parts of the chapter because it shows how tables relate to each other and why database structure matters so much.
-
-### 6. Normalization reduces duplication and inconsistency
-A major principle in relational database design is that each fact should be stored in the correct place and not repeated unnecessarily. This reduces errors and makes data more reliable.
-
-### 7. SQL is the language of relational data work
-The chapter explains how SQL developed from early relational ideas and became the standard language for:
-- defining tables
-- inserting data
-- updating data
-- deleting data
-- querying results
-
-### 8. SQL is nonprocedural
-This chapter introduced an important mindset shift: SQL focuses on **what** you want, not exactly **how** to retrieve it. The database engine figures out the execution strategy.
-
-This is different from languages like Python, where the programmer usually controls the sequence of operations more directly.
-
-### 9. SQL remains relevant in modern data work
-Even though newer systems like Hadoop, Spark, and NoSQL platforms have emerged, SQL is still highly relevant. The chapter argues that SQL continues to adapt and remains useful across different kinds of data systems.
+- speed
+- accuracy
+- searchability
+- data maintenance
 
 ---
 
-## Important Terms
+### Early Database Systems
 
-- **Database**: a set of related information
-- **Entity**: something of interest stored in the database
-- **Table**: a collection of rows
-- **Row**: one record in a table
-- **Column**: one attribute or field in a table
-- **Primary key**: a column or set of columns that uniquely identifies a row
-- **Foreign key**: a column or set of columns that links one table to another
-- **Result set**: the table-like output of a query
-- **Normalization**: organizing data to reduce redundancy and inconsistency
-- **Relational model**: organizing data in tables connected by shared keys
+Before relational databases, two major approaches existed:
 
----
+#### Hierarchical Databases
 
-## Why This Chapter Matters for Learning SQL
+Data organized like a tree:
 
-This chapter does not teach the deepest technical SQL yet, but it explains why SQL works the way it does. That matters because learning SQL is much easier when I understand:
+Customer
+└── Account
+    └── Transactions
 
-- why tables are structured the way they are
-- why keys matter
-- how relationships between tables are formed
-- why querying relational data is different from browsing spreadsheets or working in Excel
+Advantages:
+- simple structure
 
-This chapter also made it clear that SQL is not just a legacy tool. It is still a core skill in analytics, reporting, business intelligence, finance, and data work more broadly.
+Disadvantages:
+- difficult to query flexibly
+- limited relationships
 
----
+#### Network Databases
 
-## Career / Portfolio Relevance
+Data connected through links.
 
-One thing I want from this book is not just technical skill, but a stronger public portfolio. This chapter helps with that because it gives me language to explain what I am learning and why it matters.
+Advantages:
+- more flexible relationships
 
-A GitHub profile becomes stronger when it shows:
-- technical practice
-- clear written explanations
-- consistency over time
-- understanding of concepts, not just copied code
-
-This chapter is a good reminder that my GitHub should document both:
-1. **what I built**
-2. **what I learned**
-
-That combination is more useful for job searching than posting isolated code with no explanation.
+Disadvantages:
+- complicated navigation
+- difficult maintenance
 
 ---
 
-## How I Plan to Apply This
+### Relational Databases
 
-As I work through this book, I want to use each chapter to produce three things:
+Introduced by E.F. Codd at IBM in 1970.
 
-### 1. Notes
-A short written summary of the chapter in plain English.
+Core idea:
 
-### 2. Practice
-SQL examples, exercises, and small experiments in notebooks or scripts.
+Store information in tables rather than linked trees.
 
-### 3. Portfolio artifacts
-Clean GitHub commits that show progress, documentation, and business-relevant thinking.
+Examples:
 
-For Chapter 1 specifically, the focus is on understanding the foundations:
-- what databases are
-- how relational systems differ from older models
-- why SQL remains important
-- how database structure affects query logic
+- Customers
+- Accounts
+- Transactions
+- Products
+
+Tables can be connected using shared identifiers.
 
 ---
 
-## My Main Reflection
+### Primary Keys
 
-My biggest takeaway from Chapter 1 is that learning SQL is not just about memorizing syntax. It is about learning how data is structured, connected, and queried in a reliable way.
+A column that uniquely identifies a row.
 
-That makes SQL feel less like a narrow technical skill and more like a practical language for analytical work.
+Examples:
+
+- customer_id
+- account_id
+- transaction_id
+
+Purpose:
+
+- uniquely identify records
+- prevent duplicates
 
 ---
 
-## Next Step
+### Foreign Keys
 
-My next step is to move into the first hands-on chapters and start building:
-- SQL notes
-- practice queries
-- public GitHub artifacts
+A column that links one table to another.
 
-The goal is to turn learning into visible proof of work over time.
+Example:
+
+account.customer_id
+
+links:
+
+Account → Customer
+
+Purpose:
+
+- connect related tables
+- support joins
+
+---
+
+### Normalization
+
+Design principle:
+
+Store each piece of information only once.
+
+Benefits:
+
+- reduces redundancy
+- improves consistency
+- reduces errors
+
+---
+
+### SQL
+
+SQL evolved from IBM research into the standard language for relational databases.
+
+SQL is used to:
+
+- retrieve data
+- insert data
+- update data
+- delete data
+- define database structures
+
+---
+
+### Major SQL Statement Types
+
+Schema Statements:
+
+- CREATE
+- ALTER
+- DROP
+
+Data Statements:
+
+- SELECT
+- INSERT
+- UPDATE
+- DELETE
+
+Transaction Statements:
+
+- COMMIT
+- ROLLBACK
+
+---
+
+### SQL Is Nonprocedural
+
+Traditional programming tells the computer HOW to do something.
+
+SQL tells the database WHAT results you want.
+
+The database optimizer decides how to retrieve the data.
+
+---
+
+## Important SQL Pattern
+
+Most queries follow:
+
+SELECT
+FROM
+WHERE
+
+Example:
+
+SELECT customer_name
+FROM customers
+WHERE state = 'IL';
+
+---
+
+## Why This Matters For Market Analysis
+
+Market data naturally fits relational databases.
+
+Examples:
+
+### Company Table
+
+- ticker
+- company name
+- sector
+
+### Price Table
+
+- ticker
+- date
+- close price
+
+### Financial Statement Table
+
+- ticker
+- revenue
+- earnings
+- assets
+
+### Economic Data Table
+
+- date
+- CPI
+- unemployment
+- GDP
+
+SQL allows these datasets to be connected and analyzed efficiently.
+
+---
+
+## Personal Takeaways
+
+- SQL remains highly relevant despite newer technologies.
+- Relational thinking is more important than memorizing syntax.
+- Understanding tables, keys, and relationships is foundational.
+- SQL complements Python rather than replacing it.
+- Market and financial data are naturally suited to relational databases.
