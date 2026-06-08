@@ -8,10 +8,12 @@ This repository documents my progress learning SQL using:
 
 ## Goals
 
-- Build SQL skills
-- Apply SQL to market analysis
-- Build portfolio-quality projects
-- Improve my GitHub profile
+- Build strong SQL fundamentals
+- Apply SQL to market and financial analysis
+- Develop investment research workflows
+- Create portfolio-quality analytics projects
+- Improve technical fluency in financial datasets
+- Publicly document learning progress
 
 ## Repository Structure
 
