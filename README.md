@@ -25,6 +25,8 @@ market-analysis-projects/
 
 ## Progress
 
-- [ ] Chapter 1
-- [ ] Chapter 2
-- [ ] Chapter 3
+- [x] Chapter 1 - A Little Background
+- [x] Chapter 2 - Creating and Populating a Database
+- [x] Chapter 3 - Query Primer
+- [ ] Chapter 4 - Filtering
+- [ ] Chapter 5 - Querying Multiple Tables
